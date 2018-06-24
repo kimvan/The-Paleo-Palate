@@ -21,7 +21,7 @@
              background: #4fa6af;
         }
         .hero_img{
-           background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/brooke-lark-500141-unsplash.jpg'); background-size: cover;
+           background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), url('assets/brooke-lark-500141-unsplash.jpg'); background-size: cover;
 background-position: center;
 padding-top: 200px;
 padding-bottom: 200px;
@@ -55,14 +55,14 @@ padding-bottom: 200px;
            background: #4fa6af; 
         }
         .ft-left{
-          background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/brooke-lark-229136-unsplash.jpg'); background-size: cover;
+          background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('assets/brooke-lark-229136-unsplash.jpg'); background-size: cover;
 background-position: center;
 padding-top: 200px;
 padding-bottom: 200px;
           
         }
          .ft-right{
-          background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/taylor-kiser-373485-unsplash%20(1).jpg'); background-size: cover;
+          background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('assets/taylor-kiser-373485-unsplash%20(1).jpg'); background-size: cover;
 background-position: center;
 padding-top: 200px;
 padding-bottom: 200px;    

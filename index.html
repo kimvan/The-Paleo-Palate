@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,7 +17,7 @@
     <!-- Custom styles for this template -->
     <style type="text/css">
      /*   body {
-            padding-top: 5rem;
+          
         }
 .container {
     max-width: 100%;
@@ -429,7 +429,13 @@ padding-bottom: 200px;
     </li>
   </ul>
   <!-- Social buttons -->
-
+ <!-- Angular Test -->
+  <div>
+    <label>Name:</label>
+    <input type="text" ng-model="yourName" placeholder="Enter a name here">
+    <hr>
+    <h1>Hello {{yourName}}!</h1>
+  </div>
   <!-- Copyright -->
   <div class="footer-copyright text-center py-3">© 2018 Copyright:
     <a href="https://mdbootstrap.com/bootstrap-tutorial/"> The Paleo Palate</a>
@@ -452,5 +458,60 @@ padding-bottom: 200px;
    
     <!--  JQuery  -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Angular -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+    <script>
+   
+
+$http({
+  method: 'GET',
+  url: 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?diet=vegetarian&excludeIngredients=coconut&intolerances=egg%2C+gluten&number=10&offset=0&query=paleo&type=main+course',
+  headers: {"X-Mashape-Key": "5VU43jT1zOmshaC9nMC5NBIwcK9mp1HjbvPjsnH7iu0T4RJm4i", "X-Mashape-Host": "spoonacular-recipe-food-nutrition-v1.p.mashape.com"}
+}).then(function successCallback(response) {
+    console.log(data);
+  }, function errorCallback(response) {
+    // called asynchronously if an error occurs
+    // or server returns response with an error status.
+  });
+
+/*
+ $( document ).ready(function() {
+$.ajax({
+url: "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?diet=vegetarian&excludeIngredients=coconut&intolerances=egg%2C+gluten&number=10&offset=0&query=paleo&type=main+course",
+headers: {"X-Mashape-Key": "5VU43jT1zOmshaC9nMC5NBIwcK9mp1HjbvPjsnH7iu0T4RJm4i", "X-Mashape-Host": "spoonacular-recipe-food-nutrition-v1.p.mashape.com"},
+success: function(data) {
+        console.log(data);
+        getRecipeId();
+},      
+error: function(data) {
+        console.log(data);
+      }
+})
+
+function getRecipeId(){$.ajax({
+url: "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/573214/information",
+headers: {"X-Mashape-Key": "5VU43jT1zOmshaC9nMC5NBIwcK9mp1HjbvPjsnH7iu0T4RJm4i", "X-Mashape-Host": "spoonacular-recipe-food-nutrition-v1.p.mashape.com"},
+success: function(data) {
+        console.log(data);
+        getAllRecipes(data);
+      },
+error: function(data) {
+        console.log(data);
+      }
+})
+}
+function getAllRecipes(data){
+let recipeId=data.id;
+let rcpInstructions=data.instructions;
+let rcpIngredients=data.extendedIngredients;
+for(let i=0; i<rcpIngredients.length; i++){
+  console.log(rcpIngredients[i].name);
+}
+console.log(recipeId, rcpInstructions);*/
+//}
+//});
+
+
+</script>
 </body>
 </html>

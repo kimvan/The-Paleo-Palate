@@ -1,0 +1,106 @@
+<!doctype html>
+<html ng-app="Recipes">
+<head>
+    <meta charset="utf-8" />
+
+    <title>
+        
+    </title>
+
+    <style type="text/css">
+        a[ ng-click ] {
+            text-decoration: underline ;
+        }
+    </style>
+</head>
+<body ng-controller="RecipesController">
+
+    <h1>
+        Recipes
+    </h1>
+
+    <!-- Show recipes -->
+    <ul>
+        <li ng-repeat="recipe in recipes">
+            {{ recipe.id }}
+
+        </li>
+    </ul>
+
+    <!-- Initialize scripts. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+    <script type="text/javascript">
+        
+        var app = angular.module( "Recipes", [] );
+     
+        app.controller(
+            "RecipesController",
+            function( $scope, recipesService ) {
+                $scope.recipes = [];
+
+                loadRemoteData();
+              
+                function applyRemoteData( newRecipes ) {
+                
+                    $scope.recipes = newRecipes.results;
+                }
+
+        
+             
+                function loadRemoteData() {
+                   
+                    recipesService.getRecipes()
+                        .then(
+                            function( recipes) {
+                                applyRemoteData( recipes );
+                            }
+                        )
+                    ;
+                }
+            }
+        );
+      
+        app.service(
+            "recipesService",
+            function( $http, $q ) {
+                // Return Spoonacular API
+                return({
+                    getRecipes: getRecipes
+                });
+               
+                function getRecipes() {
+                    var request = $http({
+                        method: "get",
+                        url: "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?diet=vegetarian&excludeIngredients=coconut&intolerances=egg%2C+gluten&number=10&offset=0&query=paleo&type=main+course",
+                        headers: {"X-Mashape-Key": "5VU43jT1zOmshaC9nMC5NBIwcK9mp1HjbvPjsnH7iu0T4RJm4i", "X-Mashape-Host": "spoonacular-recipe-food-nutrition-v1.p.mashape.com"},
+                        params: {
+                            action: "get"
+                        }
+                    });
+                    return( request.then( handleSuccess, handleError ) );
+                }
+
+              
+              
+                function handleError( response ) {
+                    if (
+                        ! angular.isObject( response.data ) ||
+                        ! response.data.message
+                        ) {
+                        return( $q.reject( "An unknown error occurred." ) );
+                    }
+           
+                    return( $q.reject( response.data.message ) );
+                }
+          
+                function handleSuccess( response ) {
+                         
+                    return( response.data );
+                }
+            }
+        );
+    </script>
+
+</body>
+</html>
