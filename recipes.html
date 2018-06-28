@@ -2,31 +2,232 @@
 <html ng-app="Recipes">
 <head>
     <meta charset="utf-8" />
-
+ <!-- Bootstrap core CSS -->
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+ <link rel="stylesheet" href="style.css">
     <title>
         
     </title>
 
     <style type="text/css">
-        a[ ng-click ] {
+  /*  .crop {
+    width: 400px;
+    height: 350px;
+    overflow: hidden;
+}
+
+.crop img {
+    width: 800px;
+    height: 700px;
+    margin: -150px 0 0 -200px;
+}
+       */  a[ ng-click ] {
             text-decoration: underline ;
         }
     </style>
 </head>
 <body ng-controller="RecipesController">
+    <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="#" style="color: #4fa6af;">The Paleo Palate</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <h1>
-        Recipes
-    </h1>
-
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault" >
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Recipes <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Menus</a>
+                </li>
+              
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tips</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a class="dropdown-item" href="#">Recipes</a>
+                        <a class="dropdown-item" href="#">Menus</a>
+                        <a class="dropdown-item" href="#">Tips</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main role="main" class="container">
     <!-- Show recipes -->
-    <ul>
-        <li ng-repeat="recipe in recipes">
-            {{ recipe.id }}
+    <div id="see_cook" class="row">
+        <div ng-repeat="recipe in recipes1" class="col-md-4 center-text">
+            <div class="hovereffect crop">
+            <img class="img-responsive" ng-src="https://spoonacular.com/recipeImages/{{recipe.image}}"/>
+            <div class="overlay">
+                <h2>{{recipe.title}}</h2>
+        <p>
+          <a ng-href="file:///C:/Users/kvand_000/Documents/Paleo%20Palate/The-Paleo-Palate/recipes.html/&id={{recipe.id}}">See Recipe</a>
+        </p>
+            </div>
+            </div>
+         </div>
+         <div ng-repeat="recipe in recipes2" class="col-md-4 center-text">
+            <div class="hovereffect crop">
+            <img class="img-responsive" ng-src="https://spoonacular.com/recipeImages/{{recipe.image}}"/>
+            <div class="overlay">
+                <h2>{{recipe.title}}</h2>
+        <p>
+          <a ng-click="getRecipeInfo(recipe.id)">See Recipe</a>
+        </p>
+            </div>
+            </div>
+         </div>
+         <div ng-repeat="recipe in recipes3" class="col-md-4 center-text">
+            <div class="hovereffect crop">
+            <img class="img-responsive" ng-src="https://spoonacular.com/recipeImages/{{recipe.image}}"/>
+            <div class="overlay">
+                <h2>{{recipe.title}}</h2>
+        <p>
+          <a ng-href="file:///C:/Users/kvand_000/Documents/Paleo%20Palate/The-Paleo-Palate/recipes.html/&id={{recipe.id}}">See Recipe</a>
+        </p>
+            </div>
+            </div>
+         </div>          
+         </div>
+         <footer class="page-footer font-small stylish-color-dark pt-4 mt-4">
 
-        </li>
-    </ul>
-
+            <!-- Footer Links -->
+            <div class="container text-center text-md-left">
+          
+              <!-- Grid row -->
+              <div class="row">
+          
+                <!-- Grid column -->
+                <div class="col-md-4 mx-auto">
+          
+                  <!-- Content -->
+                   <a class="navbar-brand" href="#" style="color: #4fa6af;">The Paleo Palate</a>
+                 
+          
+                </div>
+                <!-- Grid column -->
+          
+                <hr class="clearfix w-100 d-md-none">
+          
+                <!-- Grid column -->
+                <div class="col-md-2 mx-auto">
+          
+                  <!-- Links -->
+                  <ul class="list-unstyled">
+                    <li>
+                      <a href="#!">Contact Us</a>
+                    </li>
+                    <li>
+                      <a href="#!">About Us</a>
+                    </li>
+                    <li>
+                      <a href="#!">Press Room</a>
+                    </li>
+                    <li>
+                      <a href="#!">Affiliates</a>
+                    </li>
+                  </ul>
+          
+                </div>
+                <!-- Grid column -->
+          
+                <hr class="clearfix w-100 d-md-none">
+          
+                <!-- Grid column -->
+                <div class="col-md-2 mx-auto">
+          
+                  <!-- Links -->
+                
+          
+                  <ul class="list-unstyled">
+                    <li>
+                      <a href="#!">Careers</a>
+                    </li>
+                    <li>
+                      <a href="#!">Sponsorships</a>
+                    </li>
+                    <li>
+                      <a href="#!">My Account</a>
+                    </li>
+                    <li>
+                      <a href="#!">FAQs</a>
+                    </li>
+                  </ul>
+          
+                </div>
+                <!-- Grid column -->
+          
+                <hr class="clearfix w-100 d-md-none">
+          
+                <!-- Grid column -->
+                <div class="col-md-2 mx-auto">
+          
+                  <!-- Links -->
+                  <p class=" mt-3 mb-4">Be the first to hear about the latest recipes, promotions, and tips!</p>
+          
+                   <ul class="list-unstyled list-inline text-center py-2">
+              <li class="list-inline-item">
+               
+              </li>
+              <li class="list-inline-item">
+               <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Enter email address</button>
+              </li>
+            </ul>
+          
+                </div>
+                <!-- Grid column -->
+          
+              </div>
+              <!-- Grid row -->
+          
+            </div>
+            <!-- Footer Links -->
+          
+            <hr>
+          
+           
+            <hr>
+          
+            <!-- Social buttons -->
+            <ul class="list-unstyled list-inline text-center">
+              <li class="list-inline-item">
+                <a class="btn-floating btn-fb mx-1">
+                  <i class="fa fa-facebook"> </i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="btn-floating btn-tw mx-1">
+                  <i class="fa fa-twitter"> </i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="btn-floating btn-gplus mx-1">
+                  <i class="fa fa-google-plus"> </i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="btn-floating btn-li mx-1">
+                  <i class="fa fa-linkedin"> </i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="btn-floating btn-dribbble mx-1">
+                  <i class="fa fa-dribbble"> </i>
+                </a>
+              </li>
+            </ul>
+            <!-- Social buttons -->
+           <!-- Angular Test -->
+          
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">© 2018 Copyright:
+              <a href="https://mdbootstrap.com/bootstrap-tutorial/"> The Paleo Palate</a>
+            </div>
+            <!-- Copyright -->
+          
+          </footer>
+        </main>
     <!-- Initialize scripts. -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
@@ -37,13 +238,59 @@
         app.controller(
             "RecipesController",
             function( $scope, recipesService ) {
-                $scope.recipes = [];
+                //$scope.recipes = [];
+                $scope.recipes1 = [];
+                $scope.recipes2 = [];
+                $scope.recipes3 = [];
 
                 loadRemoteData();
               
+                function makeUrl(recipeId){
+                    console.log(recipeId);
+                    let baseUrl = window.location.href;
+                    console.log(baseUrl);
+                   // let concatUrl=baseUrl;
+                }
+
+                function addRecipesById(recipeObject){
+                    let allRecipesArr = recipeObject.results;
+                    let recipeIdArr=[616575,618012,574651,597004,618033,703914,809923,625009,519412];
+                    let newRecipeArr=[];
+                    for(let i=0; i<allRecipesArr.length; i++){
+                        if(recipeIdArr.includes(allRecipesArr[i].id)){
+                            newRecipeArr.push(allRecipesArr[i]);
+                        }
+                    }
+                    assignRecipes(newRecipeArr);
+                }
+
+                function assignRecipes(recipeArr){
+                    for(let i=0; i<recipeArr.length; i++){
+                        if(i>=0 && i<3){
+                            $scope.recipes1.push(recipeArr[i]);
+                        }else if(i>=3 && i<6){
+                            $scope.recipes2.push(recipeArr[i]); 
+                        }else{
+                            $scope.recipes3.push(recipeArr[i]);
+                        }
+                    }
+                }
+
+                $scope.getRecipeInfo=function(recipeId){
+                    console.log(recipeId);
+                    recipesService.getRecipeById(recipeId)
+                    .then(
+                            function( recipes) {
+                                showRecipeById(recipes);
+                            }
+                        )
+                    ;
+
+                }
+
                 function applyRemoteData( newRecipes ) {
-                
-                    $scope.recipes = newRecipes.results;
+                addRecipesById(newRecipes);
+                  //  $scope.recipes = newRecipes.results;
                 }
 
         
@@ -53,7 +300,8 @@
                     recipesService.getRecipes()
                         .then(
                             function( recipes) {
-                                applyRemoteData( recipes );
+                                //applyRemoteData( recipes );
+                                addRecipesById(recipes);
                             }
                         )
                     ;
@@ -66,13 +314,27 @@
             function( $http, $q ) {
                 // Return Spoonacular API
                 return({
-                    getRecipes: getRecipes
+                    getRecipes: getRecipes,
+                    getRecipeById: getRecipeById
                 });
                
                 function getRecipes() {
                     var request = $http({
                         method: "get",
-                        url: "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?diet=vegetarian&excludeIngredients=coconut&intolerances=egg%2C+gluten&number=10&offset=0&query=paleo&type=main+course",
+                        url: "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?diet=vegetarian&excludeIngredients=coconut&intolerances=egg%2C+gluten&number=80&offset=0&query=paleo&type=main+course",
+                        headers: {"X-Mashape-Key": "5VU43jT1zOmshaC9nMC5NBIwcK9mp1HjbvPjsnH7iu0T4RJm4i", "X-Mashape-Host": "spoonacular-recipe-food-nutrition-v1.p.mashape.com"},
+                        params: {
+                            action: "get"
+                        }
+                    });
+                    return( request.then( handleSuccess, handleError ) );
+                }
+
+                function getRecipeById(id) {
+                    var deferUrl = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/' + id + '/information';
+                    var request = $http({
+                        method: "get",
+                        url: deferUrl,
                         headers: {"X-Mashape-Key": "5VU43jT1zOmshaC9nMC5NBIwcK9mp1HjbvPjsnH7iu0T4RJm4i", "X-Mashape-Host": "spoonacular-recipe-food-nutrition-v1.p.mashape.com"},
                         params: {
                             action: "get"
@@ -95,7 +357,7 @@
                 }
           
                 function handleSuccess( response ) {
-                         
+                     console.log(response.data);    
                     return( response.data );
                 }
             }
