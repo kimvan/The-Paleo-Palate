@@ -5,6 +5,8 @@
  <!-- Bootstrap core CSS -->
  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
  <link rel="stylesheet" href="style.css">
+ 
+
     <title>
         
     </title>
@@ -61,9 +63,7 @@
             <img class="img-responsive" ng-src="https://spoonacular.com/recipeImages/{{recipe.image}}"/>
             <div class="overlay">
                 <h2>{{recipe.title}}</h2>
-        <p>
-          <a ng-href="file:///C:/Users/kvand_000/Documents/Paleo%20Palate/The-Paleo-Palate/recipes.html/&id={{recipe.id}}">See Recipe</a>
-        </p>
+                <a ng-click="getRecipeInfo(recipe.id)">See Recipe</a>
             </div>
             </div>
          </div>
@@ -231,8 +231,9 @@
     <!-- Initialize scripts. -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript">
-        
+     
         var app = angular.module( "Recipes", [] );
      
         app.controller(
