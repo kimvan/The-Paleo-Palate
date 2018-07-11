@@ -67,7 +67,14 @@ padding-bottom: 200px;
     width: 200px;
     text-decoration: none;
 }
-
+.hero_btn_rec:hover{
+    color:#ffffff;
+    background: #4fa6af;
+    border-color: #4fa6af;
+}
+a:hover{
+    color:#ffffff;
+}
                 .hero_btn:hover{
     background: #4fa6af;
     border-color: #4fa6af;
