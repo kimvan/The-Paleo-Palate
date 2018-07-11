@@ -1,6 +1,10 @@
   body {
             padding-top: 5rem;
+            font-family: 'Lato', sans-serif;
         }
+        a[href], input[type='submit'], input[type='image'], label[for], select, button, .pointer {
+            cursor: pointer;
+     }
 .container {
     max-width: 100%;
 }
@@ -44,11 +48,11 @@ padding-top: 200px;
 padding-bottom: 200px;
         }
         .hero_img_rec{
-            background: linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('assets/iwona-lach-108955-unsplash.jpg'); background-size: cover;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('assets/arugala_salad.jpg'); background-size: cover;
  background-position: center;
  padding-top: 200px;
  padding-bottom: 200px;
- text-align: center;
+ text-align: left;
          }
         .hero_btn{
     color: #ffffff;
@@ -72,9 +76,7 @@ padding-bottom: 200px;
     background: #4fa6af;
     border-color: #4fa6af;
 }
-a:hover{
-    color:#ffffff;
-}
+
                 .hero_btn:hover{
     background: #4fa6af;
     border-color: #4fa6af;
@@ -233,7 +235,7 @@ padding-bottom: 200px;
             margin:0 auto;
             max-width: 90%;
             max-height: 60%;
-            padding-top: 6%;
+            padding-top: 15%;
         }
         
         .lightbox:target {
@@ -245,6 +247,18 @@ padding-bottom: 200px;
         }
 
         .rec_card{
-           width:50%;
+           width:40%;
            margin:0 auto; 
+        }
+
+        @media only screen and (max-width: 850px) {
+            .rec_card{
+                width:80%;       
+             }
+        }
+        .card-title{
+            font-weight: 600;
+        }
+        .card{
+            text-align: left;
         }
