@@ -6,7 +6,7 @@
  <!-- Bootstrap core CSS -->
  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
  <link rel="stylesheet" href="style.css">
- 
+ <link href="https://fonts.googleapis.com/css?family=Anton|Dosis|Lato|Montserrat|Nanum+Gothic|Open+Sans|Playfair+Display|Quicksand|Raleway|Roboto" rel="stylesheet">
 
     <title>
         
@@ -31,7 +31,7 @@
 </head>
 <body ng-controller="RecipesController">
     <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
-        <a class="navbar-brand" href="#" style="color: #4fa6af;">The Paleo Palate</a>
+        <a class="navbar-brand" href="file:///C:/Users/kvand_000/Documents/Paleo%20Palate/The-Paleo-Palate/index.html" style="color: #4fa6af;">The Paleo Palate</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -39,74 +39,120 @@
         <div class="collapse navbar-collapse" id="navbarsExampleDefault" >
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Recipes <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="file:///C:/Users/kvand_000/Documents/Paleo%20Palate/The-Paleo-Palate/recipes.html#!/">Recipes <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Menus</a>
-                </li>
-              
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tips</a>
-                    <div class="dropdown-menu" aria-labelledby="dropdown01">
-                        <a class="dropdown-item" href="#/recipes">Recipes</a>
-                        <a class="dropdown-item" href="">Menus</a>
-                        <a class="dropdown-item" href="#">Tips</a>
-                    </div>
+                    <a class="nav-link" href="#">Learn</a>
                 </li>
             </ul>
         </div>
     </nav>
    
     <main role="main" class="container">
+        <div class="starter-template">
+            <div class="jumbotron hero_img_rec">
+                <h6 class="display-4" style="color:#fff;">RECIPE<br>CENTER</h6>
+                <!-- <a class="btn btn-primary btn-lg hero_btn" href="#" role="button">See Recipes</a> -->
+            </div>
+        </div>
+        
     <!-- Show recipes -->
     <div id="see_cook" class="row">
         <div ng-repeat="recipe in recipes1" class="col-md-4 center-text">
-            <div class="hovereffect crop">
+            <div class="card">
+                <div class="hovereffect">
+                    <img class="card-img-top" ng-src="https://spoonacular.com/recipeImages/{{recipe.image}}"/>
+                    </div>
+                <div class="card-body">
+                  <h5 class="card-title">{{recipe.title}}</h5>
+                  <p class="card-text">Ready in: {{recipe.readyInMinutes}} min</p>
+                  <p class="card-text">Servings: {{recipe.servings}} min</p>
+                  <a class="btn btn-primary btn-lg hero_btn_rec"  style="text-decoration:none;" ng-click="getRecipeInfo(recipe.id)" role="button">See Recipe</a>
+                </div>
+              </div>
+
+
+           <!--  <div class="hovereffect crop">
             <img class="img-responsive" ng-src="https://spoonacular.com/recipeImages/{{recipe.image}}"/>
             <div class="overlay">
                 <h2>{{recipe.title}}</h2>
-                <p>
-                <a href="#insIng" ng-click="getRecipeInfo(recipe.id, recipe.image)">See Recipe</a>
-            </p>
+                
+                    <a class="btn btn-primary btn-lg hero_btn" href="#"  style="text-decoration:none;" ng-click="getRecipeInfo(recipe.id)" role="button">See Recipe</a>
+                 <a href="#insIng" ng-click="getRecipeInfo(recipe.id)">See Recipe</a>
+            
               </div>
-            </div>
+            </div> -->
          </div>
          <div id="insIng" class="lightbox">
-          
-            <img class="img-responsive" ng-src="https://spoonacular.com/recipeImages/{{imageUrl}}"/>
+            <div class="card rec_card">
+                <img class="card-img-top img-responsive" ng-src="{{image}}"/>
+                <div class="card-body">
+                  <h5 class="card-title">Ingredients</h5>
+                  <div ng-repeat="ingredient in ingredients">
+                      <p>{{ingredient.original}}</p>
+                    </div>
+                    <p>Instructions: {{instructions}}</p>
+                  <a ng-click="closeBox()" class="card-link">Close</a>
+                </div>
+              </div>
+           <!--  <img class="img-responsive" ng-src="{{image}}"/>
             <h1 ng-click="closeBox()" id="closeBox">X</h1>
             <h2>Ingredients:</h2>
             <div ng-repeat="ingredient in ingredients">
               <p>{{ingredient.original}}</p>
             </div>
-            <p>Instructions: {{instructions}}</p>
+            <p>Instructions: {{instructions}}</p> -->
         </div>
 
 
          <div ng-repeat="recipe in recipes2" class="col-md-4 center-text">
-            <div class="hovereffect crop">
+            <div class="card">
+                <div class="hovereffect">
+                    <img class="card-img-top" ng-src="https://spoonacular.com/recipeImages/{{recipe.image}}"/>
+                    </div>
+                <div class="card-body">
+                  <h5 class="card-title">{{recipe.title}}</h5>
+                  <p class="card-text">Ready in: {{recipe.readyInMinutes}} min</p>
+                  <p class="card-text">Servings: {{recipe.servings}} min</p>
+                  <a class="btn btn-primary btn-lg hero_btn_rec" style="text-decoration:none;" ng-click="getRecipeInfo(recipe.id)" role="button">See Recipe</a>
+                </div>
+              </div>
+         <!--    <div class="hovereffect crop">
             <img class="img-responsive" ng-src="https://spoonacular.com/recipeImages/{{recipe.image}}"/>
             <div class="overlay">
                 <h2>{{recipe.title}}</h2>
-        <p>
-            <a ng-click="getRecipeInfo(recipe.id)">See Recipe</a>
-        </p>
+        
+            <a class="btn btn-primary btn-lg hero_btn" href="#"  style="text-decoration:none;" ng-click="getRecipeInfo(recipe.id)" role="button">See Recipe</a>
+             <a ng-click="getRecipeInfo(recipe.id)">See Recipe</a>
+        
             </div>
-            </div>
+            </div> -->
          </div>
          <div ng-repeat="recipe in recipes3" class="col-md-4 center-text">
-            <div class="hovereffect crop">
+            <div class="card">
+              <div class="hovereffect">
+                <img class="card-img-top" ng-src="https://spoonacular.com/recipeImages/{{recipe.image}}"/>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">{{recipe.title}}</h5>
+                  <p class="card-text">Ready in: {{recipe.readyInMinutes}} min</p>
+                  <p class="card-text">Servings: {{recipe.servings}} min</p>
+                  <a class="btn btn-primary btn-lg hero_btn_rec" style="text-decoration:none;" ng-click="getRecipeInfo(recipe.id)" role="button">See Recipe</a>
+                </div>
+              </div>
+           <!--  <div class="hovereffect crop">
             <img class="img-responsive" ng-src="https://spoonacular.com/recipeImages/{{recipe.image}}"/>
             <div class="overlay">
                 <h2>{{recipe.title}}</h2>
-        <p>
-            <a ng-click="getRecipeInfo(recipe.id)">See Recipe</a>
-        </p>
+        
+            <a class="btn btn-primary btn-lg hero_btn" href="#" style="text-decoration:none;" ng-click="getRecipeInfo(recipe.id)" role="button">See Recipe</a>
+             <a ng-click="getRecipeInfo(recipe.id)">See Recipe</a> 
+        
             </div>
-            </div>
+            </div> -->
          </div>          
          </div>
-         
+        
          <footer class="page-footer font-small stylish-color-dark pt-4 mt-4">
 
             <!-- Footer Links -->
@@ -271,7 +317,7 @@
 
                 function addRecipesById(recipeObject){
                     let allRecipesArr = recipeObject.results;
-                    let recipeIdArr=[616575,618012,574651,597004,618033,703914,809923,625009,519412];
+                    let recipeIdArr=[616575,618012,573710,597004,618033,703914,935843,625009,519412];
                     let newRecipeArr=[];
                     for(let i=0; i<allRecipesArr.length; i++){
                         if(recipeIdArr.includes(allRecipesArr[i].id)){
@@ -293,23 +339,23 @@
                     }
                 }
 
-                function showRecipeById(recipe, image){
+                function showRecipeById(recipe){
                   $scope.instructions=recipe.instructions;
                   $scope.ingredients=recipe.extendedIngredients;
-                  $scope.imageUrl=image;
-                  console.log($scope.instructions, $scope.ingredients);
+                  $scope.image=recipe.image;
+                  console.log($scope.instructions, $scope.ingredients, $scope.image);
                   $( "#insIng" ).show();
                 }
                $scope.closeBox= function (){
                     $('#insIng').css('display','none');
                 }
 
-                $scope.getRecipeInfo=function(recipeId, image){
+                $scope.getRecipeInfo=function(recipeId){
                     console.log(recipeId);
                     recipesService.getRecipeById(recipeId)
                     .then(
                             function( recipe) {
-                                showRecipeById(recipe, image);
+                                showRecipeById(recipe);
                             }
                         )
                     ;
@@ -349,7 +395,7 @@
                 function getRecipes() {
                     var request = $http({
                         method: "get",
-                        url: "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?diet=vegetarian&excludeIngredients=coconut&intolerances=egg%2C+gluten&number=80&offset=0&query=paleo&type=main+course",
+                        url: "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?diet=vegetarian&excludeIngredients=coconut&intolerances=egg%2C+gluten&number=100&offset=0&query=paleo&type=main+course",
                         headers: {"X-Mashape-Key": "5VU43jT1zOmshaC9nMC5NBIwcK9mp1HjbvPjsnH7iu0T4RJm4i", "X-Mashape-Host": "spoonacular-recipe-food-nutrition-v1.p.mashape.com"},
                         params: {
                             action: "get"

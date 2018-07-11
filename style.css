@@ -11,6 +11,23 @@
         .navbar-dark .navbar-nav .nav-link {
     color:#5b5b5b;
 }
+.navbar{
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #e9eaeb;
+}
+
+.navbar-brand{
+    color: #4fa6af;
+    font-size: 28px;
+    padding-left: 36px;
+}
+.navbar-nav{
+    padding-right: 36px;  
+}
+.bg-light {
+    background-color: #fff!important;
+}
         .btn-outline-success {
     color:  #4fa6af;
     background-color: transparent;
@@ -21,20 +38,39 @@
              background: #4fa6af;
         }
         .hero_img{
-           background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), url('assets/brooke-lark-500141-unsplash.jpg'); background-size: cover;
+           background: linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('assets/brooke-lark-500141-unsplash.jpg'); background-size: cover;
 background-position: center;
 padding-top: 200px;
 padding-bottom: 200px;
         }
+        .hero_img_rec{
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('assets/iwona-lach-108955-unsplash.jpg'); background-size: cover;
+ background-position: center;
+ padding-top: 200px;
+ padding-bottom: 200px;
+ text-align: center;
+         }
         .hero_btn{
-    color: #4fa6af;
-                background-color: #fff;
+    color: #ffffff;
+                background-color:transparent;
     border-color: #fff;
-            border-radius: 100px;
+            border-width: 2px;
     width: 200px;
+    text-decoration: none;
 }
+
+.hero_btn_rec{
+    color: #4fa6af;
+                background-color:transparent;
+    border-color: #4fa6af;
+            border-width: 2px;
+    width: 200px;
+    text-decoration: none;
+}
+
                 .hero_btn:hover{
     background: #4fa6af;
+    border-color: #4fa6af;
 }
         .center-text{
             text-align: center;
@@ -56,14 +92,14 @@ padding-bottom: 200px;
            background: #4fa6af; 
         }
         .ft-left{
-          background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('assets/brooke-lark-229136-unsplash.jpg'); background-size: cover;
+          background: linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('assets/brooke-lark-229136-unsplash.jpg'); background-size: cover;
 background-position: center;
 padding-top: 200px;
 padding-bottom: 200px;
           
         }
          .ft-right{
-          background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('assets/taylor-kiser-373485-unsplash%20(1).jpg'); background-size: cover;
+          background: linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('assets/taylor-kiser-373485-unsplash%20(1).jpg'); background-size: cover;
 background-position: center;
 padding-top: 200px;
 padding-bottom: 200px;    
@@ -83,7 +119,7 @@ padding-bottom: 200px;
 
 .hovereffect {
   width: 100%;
-  max-height: 500px;
+  max-height: 325px;
   /* height: 100%; */
   float: left;
   overflow: hidden;
@@ -182,14 +218,15 @@ padding-bottom: 200px;
             left: 0;
             background: rgba(0,0,0,0.4);
             overflow-x:scroll;
-            color:#ffffff;
+            color:#252525;
         }
         
         .lightbox img {
             /** Pad the lightbox image */
+            margin:0 auto;
             max-width: 90%;
             max-height: 60%;
-            margin-top: 6%;
+            padding-top: 6%;
         }
         
         .lightbox:target {
@@ -198,4 +235,9 @@ padding-bottom: 200px;
         
             /** Unhide lightbox **/
             display: block;
+        }
+
+        .rec_card{
+           width:50%;
+           margin:0 auto; 
         }
