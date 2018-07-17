@@ -1,4 +1,7 @@
-  body {
+html, body {
+    overflow-x: hidden;
+  }
+ body {
             padding-top: 5rem;
             font-family: 'Montserrat', sans-serif;
         }
@@ -36,7 +39,14 @@ a[href], input[type='submit'], input[type='image'], label[for], select, button, 
         background-size: cover;
     }
 
-
+    .parallax4 { 
+        background-image: url("assets/monstruo-estudio-573-unsplash.jpg");
+        height: 100%; 
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
 .container {
     max-width: 100%;
 }
@@ -259,7 +269,7 @@ padding-bottom: 200px;
   text-transform: uppercase;
   text-align: center;
   position: relative;
-  font-size: 24px;
+  font-size: 36px;
   background-color: transparent;
   color: #FFF;
   padding: 1em 0;
@@ -324,13 +334,16 @@ padding-bottom: 200px;
            width:40%;
            margin:0 auto; 
         }
+        .form-group{
+            float:left;
+         }
 
         @media only screen and (max-width: 850px) {
             .rec_card{
                 width:80%;       
              }
-             .form-control{
-                width:100%;
+             .form-group{
+               float:none;
             }
             .blue_bkgrnd img{
                 width:60%;
@@ -341,4 +354,12 @@ padding-bottom: 200px;
         }
         .card{
             text-align: left;
+            border: 1px solid #a9d6da;
+        }
+        #see_cook{
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+        .card-text span{
+            color:#4fa6af;
         }
