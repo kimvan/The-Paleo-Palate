@@ -60,6 +60,15 @@ button,
     background-size: cover;
 }
 
+.parallax5 {
+    background-image: url("assets/alison-marras-361028-unsplash.jpg");
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .container {
     max-width: 100%;
 }
@@ -243,6 +252,7 @@ button,
     font-family: 'Montserrat', sans-serif;
     padding-bottom: 25px;
     padding-top: 25px;
+    margin: 0 1%;
 }
 
 .quote {
@@ -401,6 +411,31 @@ button,
     color: #4fa6af;
 }
 
+.phil-text-one{
+text-align: left;
+max-width: 40%;
+padding-top: 40px;
+}
+
+.phil-text-two{
+    text-align: right;
+    max-width: 40%;
+    margin-left: 7%;
+    padding-top: 40px;
+}
+.phil-img{
+    max-width:420px;
+}
+
+.phil-top{
+    padding-top:50px !important; 
+}
+
+.phil-bottom{
+    padding-bottom: 35px !important;
+}
+
+
 @media only screen and (max-width: 850px) {
     .rec_card {
         width: 80%;
@@ -410,5 +445,22 @@ button,
     }
     .blue_bkgrnd img {
         width: 60%;
+    }
+}
+@media only screen and (max-width: 500px) {
+    
+    .phil-text-one{
+        text-align: center;
+        max-width: 100%;
+        margin: 0 1%;
+        }
+        
+    .phil-text-two{
+        text-align: center;
+        max-width: 100%;
+        margin: 0 1%;
+    }
+    .phil-top{
+        padding-top:20px;
     }
 }
